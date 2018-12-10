@@ -24,6 +24,7 @@ namespace Event_Binding_Test
         {
             InitializeComponent();
 
+            // Define data context to our View Model class to follow MVVM pattern
             this.DataContext = new ViewModel();
         }
     }

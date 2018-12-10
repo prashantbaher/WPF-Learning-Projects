@@ -9,13 +9,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <!--Sample Text Box-->
         <TextBox HorizontalAlignment="Center" 
                  VerticalAlignment="Center"
                  Padding="20"
                  FontSize="20"
-                 Foreground="red" Text="{Binding SampleText}">
+                 Foreground="red" 
+                 Text="{Binding SampleText}">
+            <!--Interaction Trigger from interactivity namespace.-->
             <i:Interaction.Triggers>
+                <!--
+                Event Trigger from interactivity namespace.
+                EventName is name of event we want to link with a method in view model.
+                -->
                 <i:EventTrigger EventName="PreviewTextInput">
+                    <!--
+                    Call Method action from interactions namespace.
+                    TargetObject is Binding to view model.
+                    MethodName is name of method which we want to link with our UI event.
+                    -->
                     <ei:CallMethodAction TargetObject="{Binding}" MethodName="IsAllowedInput" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
